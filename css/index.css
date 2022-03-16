@@ -5,7 +5,7 @@ button{
      border-radius: 15px;
      border: 2px solid black;
      box-shadow: 1px 2px 1px rgba(24, 23, 23, 0.973);
-     font-size: 20px;
+     font-size: 17px;
 }
 
 
@@ -21,6 +21,7 @@ font-size: 30px;
  margin: 0 20px 20px 30px;
      
 }
+
 
 
 #count{margin-top: 15%;
@@ -48,7 +49,7 @@ align-items: center;
 
 h1{
 color:rgba(14, 66, 14, 0.911);
-font-size: 70px;
+font-size: 40px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
 
 #zero{ font-size: 50%;}
@@ -69,5 +70,13 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
           justify-content: flex-start;
           align-items: center;
      }
+     
+     span#num{
+     padding-top: 10px;
+}
+
+button{
+     width: 40px;}
+
      
 }
