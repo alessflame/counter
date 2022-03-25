@@ -1,6 +1,6 @@
 button{
-     width: 10%;
-     background-color: rgba(35, 119, 35, 0.911);
+     width: 15%;
+     background-color: rgba(56, 134, 56, 0.836);
      margin: 1%;
      border-radius: 15px;
      border: 2px solid black;
@@ -38,9 +38,10 @@ align-items: center;
 }
 
 #title button{
-     height: 20%;
+     height: 30px;
      background-color: black;
      color: antiquewhite;
+     font-size: 20px;
 }
 #title button:hover{
      background-color: antiquewhite;
@@ -49,10 +50,15 @@ align-items: center;
 
 h1{
 color:rgba(14, 66, 14, 0.911);
-font-size: 40px;
+font-size: 35px;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
 
 #zero{ font-size: 50%;}
+
+footer{
+     width: 100%;
+     text-align: center;
+}
 
 @media  screen and (max-width: 600px){
 
@@ -76,7 +82,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 }
 
 button{
-     width: 40px;}
+     width: 60px;}
 
      
 }

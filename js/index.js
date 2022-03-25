@@ -1,63 +1,77 @@
+/*funzione che crea un elemento e lo ritorna
+   caratteristiche dell'elemento:
+   attributo- id- un "eventuale" valore - una "eventuale" funzione da associare al click
+  */
+function create(elemento, id, value = " ", clickFunc = " ") {
+  let element = document.createElement(elemento);
+  element.id = id;
+  element.innerText = value;
 
+  element.onclick = clickFunc;
 
-//buttone azzera conteggio
-let zero= document.getElementById("zero");
-zero.addEventListener("click", (e) => {num=0; label.innerText=num;});
-//
-
-
-//selezione del div che contiente i bottoni
-let div=document.querySelector("div");
-//delego l'evento "click" dei bottoni al div che li contiene
-div.addEventListener("click", evento);
-
-//selezione del'elemento span che contiente il numero
-let label= document.querySelector("#count > span");
-
-//variabile che contiene il numero (valore testo)
-let num= label.textContent;
-
-
-
-//funzione dell'evento con uno switch basato sull'id del bottone che genera l'evento 
-function evento(e){
-    let idEvent= e.target.id;
-    
-switch(idEvent){
-     case "operatorMinus":
-       num=minus(num);
-       label.innerText=num;
-        break;
-     case "operatorPlus":
-          num=plus(num);
-       label.innerText=num;
-          break;
-     case "plusTen":
-         num= tenPlus(num);
-          label.innerText=num;
-     break;
-     case "minusTen":
-         num= tenMinus(num);
-          label.innerText=num;
-          break; 
-
-}}
-
-
-//funzioni 
-
-function plus(x){
-        return ++x;
+  return element;
 }
 
-function minus(x){
-     return --x;
+//funzione che appende gli elementi ad un "container"
+
+//se il contenitore ha un id allora viene ricercato attraverso getElementById
+//altrimenti come nel caso del "body" si utilizza queryselector
+function Append(element, idElementChild = [], id = false) {
+  let boxElement;
+
+  if (id) {
+    boxElement = document.getElementById(element.id);
+  } else {
+    boxElement = document.querySelector(element);
+  }
+
+  idElementChild.forEach((element) => {
+    boxElement.appendChild(element);
+  });
 }
 
-function tenMinus(x){
-     return Number(x)-10;
+//funzioni count
+
+function addValue(number, div) {
+  let label = document.getElementById(div);
+
+  let num = parseInt(label.textContent);
+  num += number;
+  label.innerText = num;
 }
 
-function tenPlus(x){
-     return Number(x)+10;
+function addZero(div) {
+  let label = document.getElementById(div);
+  label.innerText = 0;
 }
+
+let mainContainer = create("div", "count"); //contenitore dei pulsanti e del numero
+
+//array che contiene gli elementi creati
+elementMainContainer = [
+  create("button", "operatorMinus", "-", () => addValue(-1, "num")),
+  create("span", "num", "0"),
+  create("button", "operatorPlus", "+", () => addValue(1, "num")),
+];
+
+let container2 = create("div", "title"); //container secondario
+
+//elementi dentro il container secondario
+let elementContainer = [
+  create("h1", "", "counter"),
+  create("button", "zero", "zero", () => addZero("num")),
+];
+
+//appendo i contenitori alla pagine
+Append("body", [mainContainer]);
+Append("body", [container2]);
+
+//inserisco gli elementi nei rispettivi container
+Append(mainContainer, elementMainContainer, true);
+Append(container2, elementContainer, true);
+
+
+let footer= create("footer", ""); //creo un footer
+let textFooter= create("h3", "textFooter", "Js Basic"); //creo testo per il footer
+Append("body",[footer] ); //appendo il footer al body 
+Append("footer", [textFooter] ); //inserisco l'elemento H3 all'interno del footwe
