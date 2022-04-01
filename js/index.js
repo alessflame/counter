@@ -16,7 +16,7 @@ function create(elemento, id, value = " ", clickFunc = " ") {
 
 //se il contenitore ha un id allora viene ricercato attraverso getElementById
 //altrimenti come nel caso del "body" si utilizza queryselector
-function Append(element, idElementChild = [], id = false) {
+function append(element, idElementChild = [], id = false) {
   let boxElement;
 
   if (id) {
@@ -63,15 +63,15 @@ let elementContainer = [
 ];
 
 //appendo i contenitori alla pagine
-Append("body", [mainContainer]);
-Append("body", [container2]);
+append("body", [mainContainer]);
+append("body", [container2]);
 
 //inserisco gli elementi nei rispettivi container
-Append(mainContainer, elementMainContainer, true);
-Append(container2, elementContainer, true);
+append(mainContainer, elementMainContainer, true);
+append(container2, elementContainer, true);
 
 
 let footer= create("footer", ""); //creo un footer
 let textFooter= create("h3", "textFooter", "Js Basic"); //creo testo per il footer
-Append("body",[footer] ); //appendo il footer al body 
-Append("footer", [textFooter] ); //inserisco l'elemento H3 all'interno del footwe
+append("body",[footer] ); //appendo il footer al body 
+append("footer", [textFooter] ); //inserisco l'elemento H3 all'interno del footwe
